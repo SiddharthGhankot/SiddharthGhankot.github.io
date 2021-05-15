@@ -1,0 +1,804 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>VegEats</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+
+html{
+    scroll-behavior: smooth;
+    transition: 1s;
+}
+
+body{
+    background-image:url(https://png.pngtree.com/thumb_back/fh260/20170803/pngtree-Food-Menu-Fare-Meal-background-photo-869492.jpg);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:100% 100%; 
+}
+
+
+.fixedbar{
+    display:flex;
+    background-color:black;
+    position:sticky;
+    z-index:1; 
+    border-width:1px 1px 1px 1px;
+    border-radius:10px 10px 10px 10px;   
+}
+
+.fixedbaroptions{
+    display:flex;
+    flex-direction:left-right;
+    font-family:Helvetica, Arial, sans-serif;
+    font-size:20px;
+    align-items:center;
+}
+
+.fixedbaroptions>a:hover{
+    color:#5EFCE8;
+    transform:scale(1.1);
+}
+
+.logopart{
+    flex:50%;
+    display:flex;
+    flex-direction:left-right;
+    font-size:40px;
+    align-items:center;
+    color:#8FFBFA;
+    font-family:Helvetica, Arial, sans-serif;
+    padding:10px;
+}
+
+.logoimage{
+    margin:10px 10px 0px 10px;
+}
+
+.fixedbaroptions>a{
+    text-decoration:none;
+    padding-right:30px;
+    color:white;
+}
+
+.introduction{
+    display:flex;
+    flex-direction:left-right;
+    background-color: white;
+    margin-top:20px;
+    border-radius:10px 10px 10px 10px;
+    height:610px;
+}
+
+.introductiontext{
+    font-family: Papyrus, fantasy;
+    min-width: 640px;
+}
+
+.introimage{
+    margin-right:8px;
+    margin-top:30px;
+}  
+
+.introtitle{
+    margin-top:200px;
+    margin-left:25px;
+    font-size:60px;	
+}
+
+.introsubtitle{
+    margin-top:50px;
+    margin-left:25px;
+    font-size:25px;
+    color:#07296C;
+}
+
+.itemdiv{ 
+        height:430px;
+        width:305px;
+        background-color:white;
+        margin-top:35px;
+        margin-left:60px;
+        margin-bottom:60px;
+        float:left;
+        border-radius:5%;
+    }  
+
+    img{
+        border-radius:5% 5% 0% 0%;
+    }
+
+    .foodname{
+        postion:relative;
+        margin-left:10px;
+        margin-top:10px;
+        font-size:125%;
+        font-family:Gill Sans, sans-serif;
+    }
+  
+    .content{
+        position:relative;
+        margin-left:5px;
+        margin-right:5px;
+        font-family:Gill Sans, sans-serif;
+    }
+
+    .addoption{
+        font-family: 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+        position:relative;
+        top:-11px;
+        left:10px;
+        font-color:red
+    }
+
+    .addicon{
+        background-color:white;
+        width:70px;
+        height:40px;
+        position:relative;
+        left:220px;
+        top:-135px;
+        border-style:solid solid solid solid;
+        border-width:2px 2px 2px 2px;
+        border-color:#6EF33F #6EF33F #6EF33F #6EF33F;
+        border-radius:50px 50px 50px 50px; 
+        cursor:pointer;   
+    }
+
+    .addicon:hover{
+	transform:scale(1.05);
+	color:black;
+	background-color:#6FE265 ;
+	border-color:green;
+    }
+
+    .addicon:active {
+	transform:scale(1);
+	background-color:#6FE265 ;
+	border-color:green;
+    }
+
+    .addicon:focus{
+	color:white;
+	background:#6FE265 ;
+    }
+
+    .vegsymbol{
+        position:relative;
+        left:15px;
+        top:-20px;
+    }
+
+    .price{
+        position:relative;
+        left:150px;
+        top:-50px;
+        
+    }
+
+    .example2{
+        position:relative;
+        left:30px;
+        top:-103px;
+    }
+
+    .example1{
+        position:relative;
+        left:-30px;
+        top:-45px;
+        font-size:200%;
+        color:red;
+    }
+
+
+
+    .search-bar{
+        width:30%;
+        margin:40px auto;
+    }
+
+    input[type="text"] {
+        width:100%;
+        height:39px;
+        color:black;
+        font-size:20px;
+        border:3px solid #BEBEBE;
+        border-radius:15px 0px 0px 15px;
+    }
+    
+    
+
+    button{
+        position:relative;
+        left:460px;
+        top:-47px;
+        width:20%;
+        height:47px;
+        border:3px solid #BEBEBE;
+        border-radius:0px 15px 15px 0px;
+        cursor:pointer;
+        background-color:white;
+        
+    }
+
+    button:hover{
+        background-color:white;
+        transform:scale(1.01);
+    }
+
+    .review{
+        margin-left:700px;
+        font-size:200%;
+        color:#D50404;
+    }
+
+    .reviewcard{
+        background-color:white;;
+        margin-left:100px;
+        height:250px;
+        width:1330px;
+        border-radius:15px;
+        margin-bottom:25px;
+    }
+  
+    .image{
+        position:relative;
+        left:15px;
+        top:40px;
+        border-width:2px 2px 2px 2px;;
+    }
+
+    .name{
+        position:relative;
+        bottom:200px;
+        left:40px;
+        font-size:200%;
+    }
+
+    .reviewtitle{
+        position:relative;
+        bottom:260px;
+        left:225px;
+    } 
+
+    .reviewcontent{
+        position:relative;
+        bottom:280px;
+        left:220px;
+        width:1100px;
+    }
+
+    .responsetitle{
+        margin-left:520px;
+        font-size:200%;
+        color:black;
+        background-color:#65FCF4;
+        width:460px;
+        height:45px;
+        padding-left:15px;
+        border-radius:10px 10px 10px 10px;
+        margin-bottom:40px;
+        margin-top:40px;     
+    }
+
+    .responsename{
+        margin-left:550px;
+    }
+
+    #fname{
+        width:400px;
+        border-radius:15px 15px 15px 15px;
+    }
+
+    #lname{
+        width:400px;
+        border-radius:15px 15px 15px 15px;
+    }
+
+    #email{
+        width:400px;
+        border-radius:15px 15px 15px 15px;
+    }
+
+    .gototop{
+        margin-left:900px;
+        position:relative;
+        bottom:40px;
+    }
+ 
+    .footer{
+        padding:40px 0;
+        background-color:black;
+        color:white;
+    }
+
+    .footer ul {
+        padding:0;
+        list-style:none;
+        text-align:center;
+        font-size:18px;
+        line-height:1.6;
+        margin-bottom:0;
+    }
+
+    .footer li {
+        padding:0 10px;
+    }
+
+    .footer ul a {
+        color:inherit;
+        text-decoration:none;
+        opacity:0.8;
+    }
+
+    .footer ul a:hover {
+        opacity:1;
+    }
+
+    .footer .socialmedia {
+        text-align:center;
+        padding-bottom:25px;
+    }
+
+    .footer .socialmedia > a {
+        font-size:24px;
+        width:40px;
+        height:40px;
+        line-height:40px;
+        display:inline-block;
+        text-align:center;
+        border-radius:50%;
+        border:1px solid #ccc;
+        margin:0 8px;
+        color:inherit;
+    }
+
+    .footer .socialmedia > a:hover {
+        opacity:0.9;
+    }
+
+    .footer .copyright {
+        margin-top:15px;
+        text-align:center;
+        font-size:13px;
+        color:#aaa;
+        margin-bottom:0;
+    }
+
+
+
+
+</style>  
+  
+</head>
+<body>
+    <div class="backgroundimage">
+        <a id="home"></a>
+
+        <div class="fixedbar">
+	    <div class="logopart">
+		<div class="logoimage">
+		    <img src="https://cdn1.vectorstock.com/i/thumb-large/76/70/restaurant-logo-or-symbol-menu-cooking-icon-vector-25007670.jpg" width="75" height="75">
+		</div>							
+		<div class="hotelname">
+		    <b>VegEats</b>
+		</div>
+	    </div>
+	    <div class="fixedbaroptions">
+                <a href="#home" id="home">Home</a>
+		<a href="#specialities" class="specialities">Specialities</a>
+                <a href="#recommendations" class="recommendations">Recommendations</a>
+		<a href="#reviews" class="reviews">Reviews</a>				
+	    </div>			
+	</div>
+  
+        <div class="introduction">
+	    <div class="introductiontext">
+	        <div class="introtitle">
+		    <p><b>A festival of flavours.</b></p>
+	        </div>					
+	        <div class="introsubtitle">						
+                <p>Experience the best taste of Indian cuisine made by the best chefs. Hygiene is the one, we do not want to compromise.</p>
+	        </div>						
+	    </div>	
+            <div class="introimage">
+	        <img src="https://tasteofindore.store/wp-content/uploads/2019/11/Gulab-Jamun-Mix.jpg" />			
+	    </div>														
+        </div>
+ 
+        <section id="specialities"></section>
+        <div>
+            <h1 style="text-align:center;color:#F1F019;text-shadow: 2px 2px 5px red;">Chinese</h1>
+            <h2 style="text-align:center;color:#9A5CD3;text-shadow: 2px 2px 3px #CCFFB2;">A must try when you are here!!!</h2>
+        </div>
+
+        <div class="itemdiv">
+   
+            <div class="foodpic">
+                <img src="https://www.hookedonheat.com/wp-content/uploads/2006/03/Gobi-Manchurian-HOHV-500x375.jpg" width="305" height="210" /> 
+                <div class="foodname">
+                    <p><b>Gobi Manchurian</b></p>
+                </div>
+                <div class="content">
+                    It is a Chinese dish which is made by sauteing deep-fried cauliflower pieces with different sauces, resulting in a perfect evening snack.
+                </div>
+                <div class="addicon">
+                    <p class="addoption"><b>ADD+</b></p>
+                </div>
+                <div class="vegsymbol">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+                </div>
+                <div class="price">
+                    <div class="example1"><p><span>&#8377;</span>99</p></div> <div class="example2"><strike><span>&#8377;</span>120</strike> <b>18% Off</b></div>
+                </div>     
+            </div>    
+        </div>
+
+        <div class="itemdiv">
+   
+            <div class="foodpic">
+            <img src="https://lh3.googleusercontent.com/NH4DkN7fq1qf2SQdZNUvDU93JwHfiz4lxJiBn4AsCeceW301gr9az73RI3Qq0Xt5Vpbs7Mi_xn8XGNYIXW9t4g=w1280-h1280-c-rj-v1-e365" width="305" height="210" /> 
+                <div class="foodname">
+                    <p><b>Chow mein</b></p>
+                </div>
+                <div class="content">
+                    Vegetable Chow Mein made with celery, broccoli, cabbage, carrots, and bean sprouts mixed with chow mein noodles in a savory sauce.
+                </div>
+                <div class="addicon">
+                    <p class="addoption"><b>ADD+</b></P>
+                </div>
+                <div class="vegsymbol">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+                </div>
+                <div class="price">
+                    <div class="example1"><p><span>&#8377;</span>89</p></div> <div class="example2"><strike><span>&#8377;</span>110</strike> <b>19% Off</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="itemdiv">
+   
+            <div class="foodpic">
+            <img src="https://bhimavaram.online/image/cache/food/BREWANDBAKE/veg_friedrice-400x400.jpg" width="305" height="210" /> 
+                <div class="foodname">
+                    <p><b>Fried rice</b></p>
+                </div>
+                <div class="content">
+                    Fried rice is a dish of cooked rice that has been stir-fried in a wok or a frying pan and mixed with various vegetables and chinese sauces.
+                </div>
+                <div class="addicon">
+                    <p class="addoption"><b>ADD+</b></P>
+                </div>
+                <div class="vegsymbol">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+                </div>
+                <div class="price">
+                    <div class="example1"><p><span>&#8377;</span>99</p></div> <div class="example2"><strike><span>&#8377;</span>129</strike> <b>23% Off</b></div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="itemdiv">
+   
+            <div class="foodpic">
+            <img src="https://i.ytimg.com/vi/NwuyBxmgpFg/maxresdefault.jpg" width="305" height="210" /> 
+                <div class="foodname">
+                    <p><b>Spring roll</b></p>
+                </div>
+                <div class="content">
+                    Spring roll is a fried dish usually available as a dim sum.They typically contain shredded carrot, bean sprouts and other vegetables served with Dipping sauce.
+                </div>
+                <div class="addicon">
+                    <p class="addoption"><b>ADD+</b></P>
+                </div>
+                <div class="vegsymbol">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+                </div>
+                <div class="price">
+                    <div class="example1"><p><span>&#8377;</span>79</p></div> <div class="example2"><strike><span>&#8377;</span>100</strike> <b>21% Off</b></div>
+                </div>       
+            </div>    
+        </div>
+
+        
+        
+        <div>
+            <h1 style="text-align:center;color:#F1F019;text-shadow: 2px 2px 5px red;margin-top:100px">Range of Delicacies</h1>
+             <section id="recommendations"></section>
+            <h2 style="text-align:center;color:white">Search here for your favourite dish!</h2>
+        </div>
+
+        
+        
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button><img src="https://media.istockphoto.com/vectors/magnify-icon-search-and-find-symbol-magnifier-or-magnifying-glass-vector-id1172550603?k=6&m=1172550603&s=170667a&w=0&h=jXcmG2dRMUhKamK703apK5xr1kbfafzBwBiGoPwTz6o=" width="35" height="35"/></button>
+            </form>
+        </div>
+
+        
+
+        <div class="itemdiv">
+            <div class="foodpic">
+                <img src="https://images.indianexpress.com/2020/02/idli_759.jpg" width="305" height="210" /> 
+                <div class="foodname">
+                    <p><b>Idli</b></p>
+                </div>
+                <div class="content">
+                    Idli is a type of savoury rice cake made by steaming a batter consisting of fermented black lentils (de-husked) and rice, served with sambar and chuthney.
+                </div>
+                <div class="addicon">
+                    <p class="addoption"><b>ADD+</b></p>
+                </div>
+                <div class="vegsymbol">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+                </div>
+                <div class="price">
+                    <div class="example1"><p><span>&#8377;</span>39</p></div> <div class="example2"><strike><span>&#8377;</span>55</strike> <b>29% Off</b></div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="itemdiv">
+            <div class="foodpic">
+                <img src="https://i.ytimg.com/vi/CCab5oh0ZOc/maxresdefault.jpg" width="305" height="210" /> 
+                <div class="foodname">
+                    <p><b>Masala Dosa</b></p>
+                </div>
+                <div class="content">
+                    It is made from rice, lentils, potato, fenugreek, ghee and curry leaves, and served with chutneys and sambar.A perfect way to start your day.
+                </div>
+                <div class="addicon">
+                    <p class="addoption"><b>ADD+</b></p>
+                </div>
+                <div class="vegsymbol">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+                </div>
+                <div class="price">
+                    <div class="example1"><p><span>&#8377;</span>59</p></div> <div class="example2"><strike><span>&#8377;</span>75</strike> <b>21% Off</b></div>
+                </div>
+            </div>    
+        </div>
+ 
+<div class="itemdiv">
+   
+    <div class="foodpic">
+        <img src="https://www.spiceupthecurry.com/wp-content/uploads/2014/05/aloo-paratha-1.jpg" width="305" height="210" /> 
+           <div class="foodname">
+               <p><b>Aloo Paratha</b></p>
+           </div>
+           <div class="content">
+               Aloo parathas consist of unleavened dough rolled with a mixture of mashed potato and spices, which is cooked on a hot tawa with butter or ghee.
+           </div>
+           <div class="addicon">
+               <p class="addoption"><b>ADD+</b></p>
+           </div>
+           <div class="vegsymbol">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+           </div>
+           <div class="price">
+               <div class="example1"><p><span>&#8377;</span>75</p></div> <div class="example2"><strike><span>&#8377;</span>89</strike> <b>16% Off</b></div>
+           </div>
+        
+    </div>
+    
+</div>
+
+<div class="itemdiv">
+   
+    <div class="foodpic">
+        <img src="https://www.cookwithkushi.com/wp-content/uploads/2021/01/IMG_7765.jpg" width="305" height="210" /> 
+           <div class="foodname">
+               <p><b>Chole Bhature</b></p>
+           </div>
+           <div class="content">
+               It is a combination of chana masala (spicy white chickpeas) and Bhatura/Puri, a fried bread made from maida. It was typically originated in Punjab.
+           </div>
+           <div class="addicon">
+               <p class="addoption"><b>ADD+</b></p>
+           </div>
+           <div class="vegsymbol">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+           </div>
+           <div class="price">
+               <div class="example1"><p><span>&#8377;</span>89</p></div> <div class="example2"><strike><span>&#8377;</span>99</strike> <b>10% Off</b></div>
+           </div>
+        
+    </div>
+    
+</div>
+
+<div class="itemdiv">
+   
+    <div class="foodpic">
+        <img src="https://www.whiskaffair.com/wp-content/uploads/2020/08/Veg-Biryani-2-3-500x375.jpg" width="305" height="210" /> 
+           <div class="foodname">
+               <p><b>Hyderabadi Biryani</b></p>
+           </div>
+           <div class="content">
+               Hyderabadi biryani is an aromatic, mouth watering and authentic Indian dish with cooked vegetables in layers of fluffy rice, fragrant spices and fried onions.
+           </div>
+           <div class="addicon">
+               <p class="addoption"><b>ADD+</b></p>
+           </div>
+           <div class="vegsymbol">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+           </div>
+           <div class="price">
+               <div class="example1"><p style="position:relative;right:20px"><span>&#8377;</span>199</p></div> <div class="example2"><strike><span>&#8377;</span>229</strike> <b>13% Off</b></div>
+           </div>
+        
+    </div>
+    
+</div>
+
+<div class="itemdiv">
+   
+    <div class="foodpic">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Gulab_jamun_%28Gibraltar%2C_November_2020%29.jpg" width="305" height="210" /> 
+           <div class="foodname">
+               <p><b>Gulab Jamun</b></p>
+           </div>
+           <div class="content">
+               It is made mainly from khoya, which is milk reduced to the consistency of a soft dough, deep fried in ghee and then immersed in sugar syrup.
+           </div>
+           <div class="addicon">
+               <p class="addoption"><b>ADD+</b></p>
+           </div>
+           <div class="vegsymbol">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+           </div>
+           <div class="price">
+               <div class="example1"><p><span>&#8377;</span>29</p></div> <div class="example2"><strike><span>&#8377;</span>39</strike> <b>26% Off</b></div>
+           </div>
+        
+    </div>
+    
+</div>
+
+<div class="itemdiv">
+   
+    <div class="foodpic">
+        <img src="https://www.royalrajputana.com.au/wp-content/uploads/2018/08/Kesar-Elaichi-Lassi-3.jpg" width="305" height="210" /> 
+           <div class="foodname">
+               <p><b>Shahi Lassi</b></p>
+           </div>
+           <div class="content">
+               Lassi is a blend of yogurt, water, and sugar which is garnished by adding various dry fruits like cashew-nuts, almonds, pistachios and strands of saffrons.
+           </div>
+           <div class="addicon">
+               <p class="addoption"><b>ADD+</b></p>
+           </div>
+           <div class="vegsymbol">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+           </div>
+           <div class="price">
+               <div class="example1"><p><span>&#8377;</span>79</p></div> <div class="example2"><strike><span>&#8377;</span>100</strike> <b>21% Off</b></div>
+           </div>
+        
+    </div>
+    
+</div>
+
+<div class="itemdiv">
+   
+    <div class="foodpic">
+        <img src="https://static.toiimg.com/photo/52743612.cms" width="305" height="210" /> 
+           <div class="foodname">
+               <p><b>Rasgulla</b></p>
+           </div>
+           <div class="content">
+               It is made from ball-shaped dumplings of chhena (an Indian cottage cheese) and semolina dough, cooked in light syrup made of sugar.
+           </div>
+           <div class="addicon">
+               <p class="addoption"><b>ADD+</b></p>
+           </div>
+           <div class="vegsymbol">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51eKCEeK9DL._AC_SL1100_.jpg" width="30" height="30" />
+           </div>
+           <div class="price">
+               <div class="example1"><p><span>&#8377;</span>29</p></div> <div class="example2"><strike><span>&#8377;</span>39</strike> <b>26% Off</b></div>
+           </div>
+        
+    </div>
+    
+</div>
+
+<div class="review">
+   
+   <p><b><u>Reviews</u></b></p>
+</div>
+  
+<section id="reviews"></section>
+
+<div class="reviewcard">
+   <div class="image">
+       <img src="https://m.cricbuzz.com/a/img/v1/192x192/i1/c170661/virat-kohli.jpg" width="200" height="200">
+   </div>
+   <div class="name">
+       Virat Kohli 
+   </div>
+   <div class="reviewtitle">
+       <p style="color:black;font-size:175%"><b>Experience to Believe the Unbelievable</b></p>
+   </div>
+   <div class="reviewcontent">
+       <p style="color:grey;font-size:20px">When we think about celebrations, VegEats is always our first option and it never disappoints. From the starter to the dessert the quality and tastes of everything was outstanding, my Biryani, Chole Bhature, Gulab Jamun might have been the best meal I have ever been served. Service was delightful and very professional. The ambience at the dining hall and the vibes out there were simply extraordinary and satisfying. The staff does an amazing job of describing anything on the menu. Seriously, can't wait to come back here. 10/10</p>
+   </div>
+</div>
+
+<div class="reviewcard">
+   <div class="image">
+       <img src="https://www.cricbuzz.com/a/img/v1/152x152/i1/c170624/steven-smith.jpg" width="200" height="200">
+   </div>
+   <div class="name">
+       Steve Smith 
+   </div>
+   <div class="reviewtitle">
+       <p style="color:black;font-size:175%"><b>Nice food with excellent staff</b></p>
+   </div>
+   <div class="reviewcontent">
+       <p style="color:grey;font-size:20px">We ofthen visit this nice and clean Restaurant near for either Lunch, Dinner or Parties. We find this hotel is one of the class in this part of the city serving authentic Indian Vegeterain food. The ambience is so good coupled with highly courteous staff helping and serving the nice hot food makes this restaurant a highly recommendable. Even my teammates likes this place mainly due to its cleaness and serving tasty food. It is a nice place to spend time not only for eats but also to have authentic Kerala SPA which is well maintained with trained staff.</p>
+   </div>
+</div>
+
+<div class="responsetitle">
+   <p>Your review is very valuable to us</p>
+</div>
+
+<div class="responsename">
+   <form action="goto:top">
+   <label for="fname"><b>First name:</b></label><br>
+   <input type="text" id="fname" name="fname"<br><br>
+   <label for="lname"><b>Last name:</b></label><br>
+   <input type="text" id="lname" name="lname"<br><br>
+   <label for="email"><b>Email ID:</b></lable><br>
+   <input type="text" id="email" name="email"<br><br>
+   <label for="reviewofcustomer"><b>Feedback:</b></label><br>
+   <textarea></textarea><br><br>
+   <input type="submit" value="Submit">
+</form> 
+<div class="gototop">
+<a href="#home"><img src="https://pbs.twimg.com/profile_images/378800000109924862/605a6c7756beee14fb29dfc75432d2e5_400x400.png" width="30" height="30"/a>
+</div>
+</div>
+
+<div class="footer">
+        <footer>
+            <div class="socialmedia"><a href="https://www.facebook.com/siddharth.ghankot" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/SGhankot?s=09" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/siddharth-ghankot-3aa015210" target="_blank"><i class="fa fa-linkedin"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#home">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">VegEats © 2021</p>
+            <p class="copyright">All Rights Reserved. Website designed by <u>Siddharth Ghankot</u></p>
+        </footer>
+    </div>        
+</body>
+</html>						
+						
+					
+					
+						
+							
+						
+					
+					
+						
+							
+						
+					
+				
+				
+							
+    
